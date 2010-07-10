@@ -150,6 +150,10 @@ PRODUCT_PACKAGES += \
     strace \
     tune2fs
 
+# init.d support
+PRODUCT_COPY_FILES += \
+    vendor/turbo/prebuilt/bin/sysinit:system/bin/sysinit
+
 # Turbo-specific init file
 PRODUCT_COPY_FILES += \
     vendor/turbo/prebuilt/etc/init.local.rc:root/init.turbo.rc

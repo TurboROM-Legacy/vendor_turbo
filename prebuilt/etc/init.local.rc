@@ -6,6 +6,9 @@ on init
 
 on post-fs-data
 
+    # Run sysinit
+    start sysinit
+
     # Change permissions on fsck log so it can be added to the dropbox
     chown root log /dev/fscklogs/log
     chmod 0640 /dev/fscklogs/log
@@ -30,6 +33,12 @@ on boot
 
     # Persistent properties (only created if persist exists)
     mkdir /persist/properties 0770 system system
+
+# sysinit (/system/etc/init.d)
+service sysinit /system/bin/sysinit
+    user root
+    oneshot
+    disabled
 
 # Disable ril services if noril prop is set
 on property:ro.radio.noril=1
