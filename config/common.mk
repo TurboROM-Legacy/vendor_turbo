@@ -29,6 +29,10 @@ PRODUCT_COPY_FILES += \
     vendor/turbo/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/turbo/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
     vendor/turbo/prebuilt/common/bin/50-turbo.sh:system/addon.d/50-turbo.sh
+    
+# Layers Backup
+PRODUCT_COPY_FILES += \
+    vendor/turbo/prebuilt/common/bin/71-layers.sh:system/addon.d/71-layers.sh
 
 # Signature compatibility validation
 PRODUCT_COPY_FILES += \
