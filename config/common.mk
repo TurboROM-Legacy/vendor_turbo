@@ -26,25 +26,25 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/aospb/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/aospb/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/aospb/prebuilt/common/bin/50-aospb.sh:system/addon.d/50-aospb.sh
+    vendor/turbo/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/turbo/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/turbo/prebuilt/common/bin/50-turbo.sh:system/addon.d/50-turbo.sh
 
 # Signature compatibility validation
 PRODUCT_COPY_FILES += \
-    vendor/aospb/prebuilt/common/bin/otasigcheck.sh:install/bin/otasigcheck.sh
+    vendor/turbo/prebuilt/common/bin/otasigcheck.sh:install/bin/otasigcheck.sh
 
 # AOSPB-specific init file
 PRODUCT_COPY_FILES += \
-    vendor/aospb/prebuilt/common/etc/init.local.rc:root/init.aospb.rc
+    vendor/turbo/prebuilt/common/etc/init.local.rc:root/init.turbo.rc
 
 # Copy latinime for gesture typing
 PRODUCT_COPY_FILES += \
-    vendor/aospb/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
+    vendor/turbo/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
 
 # SELinux filesystem labels
 PRODUCT_COPY_FILES += \
-    vendor/aospb/prebuilt/common/etc/init.d/50selinuxrelabel:system/etc/init.d/50selinuxrelabel
+    vendor/turbo/prebuilt/common/etc/init.d/50selinuxrelabel:system/etc/init.d/50selinuxrelabel
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -52,13 +52,13 @@ PRODUCT_COPY_FILES += \
 
 # Don't export PS1 in /system/etc/mkshrc.
 PRODUCT_COPY_FILES += \
-    vendor/aospb/prebuilt/common/etc/mkshrc:system/etc/mkshrc \
-    vendor/aospb/prebuilt/common/etc/sysctl.conf:system/etc/sysctl.conf
+    vendor/turbo/prebuilt/common/etc/mkshrc:system/etc/mkshrc \
+    vendor/turbo/prebuilt/common/etc/sysctl.conf:system/etc/sysctl.conf
 
 PRODUCT_COPY_FILES += \
-    vendor/aospb/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
-    vendor/aospb/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
-    vendor/aospb/prebuilt/common/bin/sysinit:system/bin/sysinit
+    vendor/turbo/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
+    vendor/turbo/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
+    vendor/turbo/prebuilt/common/bin/sysinit:system/bin/sysinit
 
 # Required packages
 PRODUCT_PACKAGES += \
@@ -108,7 +108,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # easy way to extend to add more packages
 -include vendor/extra/product.mk
 
-PRODUCT_PACKAGE_OVERLAYS += vendor/aospb/overlay/common
+PRODUCT_PACKAGE_OVERLAYS += vendor/turbo/overlay/common
 
 # Boot animation include
 ifneq ($(TARGET_SCREEN_WIDTH) $(TARGET_SCREEN_HEIGHT),$(space))
@@ -122,7 +122,7 @@ TARGET_BOOTANIMATION_SIZE := $(shell \
   fi )
 
 # get a sorted list of the sizes
-bootanimation_sizes := $(subst .zip,, $(shell ls vendor/aospb/prebuilt/common/bootanimation))
+bootanimation_sizes := $(subst .zip,, $(shell ls vendor/turbo/prebuilt/common/bootanimation))
 bootanimation_sizes := $(shell echo -e $(subst $(space),'\n',$(bootanimation_sizes)) | sort -rn)
 
 # find the appropriate size and set
@@ -140,10 +140,10 @@ $(foreach size,$(bootanimation_sizes), $(call check_and_set_bootanimation,$(size
 
 ifeq ($(TARGET_BOOTANIMATION_HALF_RES),true)
 PRODUCT_COPY_FILES += \
-    vendor/aospb/prebuilt/common/bootanimation/halfres/$(TARGET_BOOTANIMATION_NAME).zip:system/media/bootanimation.zip
+    vendor/turbo/prebuilt/common/bootanimation/halfres/$(TARGET_BOOTANIMATION_NAME).zip:system/media/bootanimation.zip
 else
 PRODUCT_COPY_FILES += \
-    vendor/aospb/prebuilt/common/bootanimation/$(TARGET_BOOTANIMATION_NAME).zip:system/media/bootanimation.zip
+    vendor/turbo/prebuilt/common/bootanimation/$(TARGET_BOOTANIMATION_NAME).zip:system/media/bootanimation.zip
 endif
 endif
 
@@ -175,9 +175,9 @@ AOSPB_MOD_VERSION := AOSPB-$(AOSPB_BUILD)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VER
 
 PRODUCT_PROPERTY_OVERRIDES += \
     BUILD_DISPLAY_ID=$(BUILD_ID) \
-    ro.aospb.version=$(AOSPB_VERSION) \
+    ro.turbo.version=$(AOSPB_VERSION) \
     ro.modversion=$(AOSPB_MOD_VERSION) \
-    ro.aospb.buildtype=$(AOSPB_BUILD_TYPE)
+    ro.turbo.buildtype=$(AOSPB_BUILD_TYPE)
 
-EXTENDED_POST_PROCESS_PROPS := vendor/aospb/tools/process_props.py
+EXTENDED_POST_PROCESS_PROPS := vendor/turbo/tools/process_props.py
 

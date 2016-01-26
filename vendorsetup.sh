@@ -1,3 +1,3 @@
-. "$(gettop)/vendor/aospb/build/envsetup.sh"
+. "$(gettop)/vendor/turbo/build/envsetup.sh"
 
-aospb_device_combos
+turbo_device_combos

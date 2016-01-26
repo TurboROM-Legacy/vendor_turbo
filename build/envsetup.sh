@@ -1,11 +1,11 @@
-# aospb functions that extend build/envsetup.sh
+# turbo functions that extend build/envsetup.sh
 
-function aospb_device_combos()
+function turbo_device_combos()
 {
     local T list_file variant device
 
     T="$(gettop)"
-    list_file="${T}/vendor/aospb/aospb.devices"
+    list_file="${T}/vendor/turbo/turbo.devices"
     variant="userdebug"
 
     if [[ $1 ]]
@@ -27,45 +27,45 @@ function aospb_device_combos()
     if [[ ! -f "${list_file}" ]]
     then
         echo "unable to find device list: ${list_file}"
-        list_file="${T}/vendor/aospb/aospb.devices"
+        list_file="${T}/vendor/turbo/turbo.devices"
         echo "defaulting device list file to: ${list_file}"
     fi
 
     while IFS= read -r device
     do
-        add_lunch_combo "aospb_${device}-${variant}"
+        add_lunch_combo "turbo_${device}-${variant}"
     done < "${list_file}"
 }
 
-function aospb_rename_function()
+function turbo_rename_function()
 {
-    eval "original_aospb_$(declare -f ${1})"
+    eval "original_turbo_$(declare -f ${1})"
 }
 
-function _aospb_build_hmm() #hidden
+function _turbo_build_hmm() #hidden
 {
     printf "%-8s %s" "${1}:" "${2}"
 }
 
-function aospb_append_hmm()
+function turbo_append_hmm()
 {
-    HMM_DESCRIPTIVE=("${HMM_DESCRIPTIVE[@]}" "$(_aospb_build_hmm "$1" "$2")")
+    HMM_DESCRIPTIVE=("${HMM_DESCRIPTIVE[@]}" "$(_turbo_build_hmm "$1" "$2")")
 }
 
-function aospb_add_hmm_entry()
+function turbo_add_hmm_entry()
 {
     for c in ${!HMM_DESCRIPTIVE[*]}
     do
         if [[ "${1}" == $(echo "${HMM_DESCRIPTIVE[$c]}" | cut -f1 -d":") ]]
         then
-            HMM_DESCRIPTIVE[${c}]="$(_aospb_build_hmm "$1" "$2")"
+            HMM_DESCRIPTIVE[${c}]="$(_turbo_build_hmm "$1" "$2")"
             return
         fi
     done
-    aospb_append_hmm "$1" "$2"
+    turbo_append_hmm "$1" "$2"
 }
 
-function aospbremote()
+function turboremote()
 {
     local proj pfx project
 
@@ -74,7 +74,7 @@ function aospbremote()
         echo "Not in a git directory. Please run this from an Android repository you wish to set up."
         return
     fi
-    git remote rm aospb 2> /dev/null
+    git remote rm turbo 2> /dev/null
 
     proj="$(pwd -P | sed "s#$ANDROID_BUILD_TOP/##g")"
 
@@ -84,8 +84,8 @@ function aospbremote()
 
     project="${proj//\//_}"
 
-    git remote add aospb "git@github.com:AOSPB/$pfx$project"
-    echo "Remote 'aospb' created"
+    git remote add turbo "git@github.com:AOSPB/$pfx$project"
+    echo "Remote 'turbo' created"
 }
 
 function cmremote()
@@ -145,11 +145,11 @@ function cafremote()
     echo "Remote 'caf' created"
 }
 
-function aospb_push()
+function turbo_push()
 {
     local branch ssh_name path_opt proj
     branch="lp5.1"
-    ssh_name="aospb_review"
+    ssh_name="turbo_review"
     path_opt=
 
     if [[ "$1" ]]
@@ -171,21 +171,21 @@ function aospb_push()
 }
 
 
-aospb_rename_function hmm
+turbo_rename_function hmm
 function hmm() #hidden
 {
     local i T
     T="$(gettop)"
-    original_aospb_hmm
+    original_turbo_hmm
     echo
 
-    echo "vendor/aospb extended functions. The complete list is:"
-    for i in $(grep -P '^function .*$' "$T/vendor/aospb/build/envsetup.sh" | grep -v "#hidden" | sed 's/function \([a-z_]*\).*/\1/' | sort | uniq); do
+    echo "vendor/turbo extended functions. The complete list is:"
+    for i in $(grep -P '^function .*$' "$T/vendor/turbo/build/envsetup.sh" | grep -v "#hidden" | sed 's/function \([a-z_]*\).*/\1/' | sort | uniq); do
         echo "$i"
     done |column
 }
 
-aospb_append_hmm "aospbremote" "Add a git remote for matching AOSPB repository"
-aospb_append_hmm "cmremote" "Add a git remote for matching CM repository"
-aospb_append_hmm "aospremote" "Add git remote for matching AOSP repository"
-aospb_append_hmm "cafremote" "Add git remote for matching CodeAurora repository."
+turbo_append_hmm "turboremote" "Add a git remote for matching AOSPB repository"
+turbo_append_hmm "cmremote" "Add a git remote for matching CM repository"
+turbo_append_hmm "aospremote" "Add git remote for matching AOSP repository"
+turbo_append_hmm "cafremote" "Add git remote for matching CodeAurora repository."
