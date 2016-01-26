@@ -34,7 +34,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/turbo/prebuilt/common/bin/otasigcheck.sh:install/bin/otasigcheck.sh
 
-# TURBO-specific init file
+# Turbo-specific init file
 PRODUCT_COPY_FILES += \
     vendor/turbo/prebuilt/common/etc/init.local.rc:root/init.turbo.rc
 

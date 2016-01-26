@@ -84,7 +84,7 @@ function turboremote()
 
     project="${proj//\//_}"
 
-    git remote add turbo "git@github.com:TURBO/$pfx$project"
+    git remote add turbo "git@github.com:TurboROM/$pfx$project"
     echo "Remote 'turbo' created"
 }
 
@@ -167,7 +167,7 @@ function turbo_push()
         proj="android_$proj"
     fi
 
-    git $path_opt push "ssh://${ssh_name}/TURBO/$proj" "HEAD:refs/for/$branch"
+    git $path_opt push "ssh://${ssh_name}/TurboROM/$proj" "HEAD:refs/for/$branch"
 }
 
 
@@ -185,7 +185,7 @@ function hmm() #hidden
     done |column
 }
 
-turbo_append_hmm "turboremote" "Add a git remote for matching TURBO repository"
+turbo_append_hmm "turboremote" "Add a git remote for matching Turbo repository"
 turbo_append_hmm "cmremote" "Add a git remote for matching CM repository"
 turbo_append_hmm "aospremote" "Add git remote for matching AOSP repository"
 turbo_append_hmm "cafremote" "Add git remote for matching CodeAurora repository."
