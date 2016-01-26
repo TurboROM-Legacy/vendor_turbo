@@ -4,4 +4,4 @@
 #
 L="log -p i -t turbo"
 
-$L "Welcome to Android `getprop ro.build.version.release` / AOSPB `getprop ro.turbo.version`";
+$L "Welcome to Android `getprop ro.build.version.release` / TURBO `getprop ro.turbo.version`";
