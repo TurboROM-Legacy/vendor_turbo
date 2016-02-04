@@ -72,11 +72,13 @@ PRODUCT_PACKAGES += \
     SpareParts \
     su
 
-# Optional packages
+# Additional Turbo packages
 PRODUCT_PACKAGES += \
     Basic \
     LiveWallpapersPicker \
-    PhaseBeam
+    LockClock \
+    PhaseBeam \
+    WallpaperPicker 
 
 # AudioFX
 PRODUCT_PACKAGES += \
