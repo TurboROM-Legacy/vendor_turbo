@@ -80,6 +80,14 @@ PRODUCT_PACKAGES += \
     PhaseBeam \
     WallpaperPicker 
 
+# BitSyko Layers
+PRODUCT_COPY_FILES += \
+    vendor/turbo/prebuilt/common/app/LayersManager/LayersManager.apk:system/app/LayersManager/LayersManager.apk
+
+# Hide BitSyko Layers Manager app icon from launcher
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.layers.noIcon=noIcon
+
 # AudioFX
 PRODUCT_PACKAGES += \
     AudioFX
