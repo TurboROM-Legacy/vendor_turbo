@@ -87,6 +87,9 @@ PRODUCT_COPY_FILES += \
 # Hide BitSyko Layers Manager app icon from launcher
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.layers.noIcon=noIcon
+# CAF Chromium
+PRODUCT_COPY_FILES += \
+    vendor/turbo/prebuilt/common/app/CAF-Chromium/CAF-Chromium.apk:system/app/CAF-Chromium/Chromium.apk
 
 # AudioFX
 PRODUCT_PACKAGES += \
