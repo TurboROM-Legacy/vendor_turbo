@@ -91,10 +91,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     vendor/turbo/prebuilt/common/app/CAF-Chromium/CAF-Chromium.apk:system/app/CAF-Chromium/Chromium.apk
 
-# AudioFX
-PRODUCT_PACKAGES += \
-    AudioFX
-
 # Extra Optional packages
 PRODUCT_PACKAGES += \
     LatinIME \
