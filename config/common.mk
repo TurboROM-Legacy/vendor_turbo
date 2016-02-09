@@ -26,8 +26,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/turbo/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/turbo/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/turbo/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
+    vendor/turbo/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions \
     vendor/turbo/prebuilt/common/bin/50-turbo.sh:system/addon.d/50-turbo.sh
     
 # Layers Backup
