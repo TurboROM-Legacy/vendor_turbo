@@ -87,6 +87,12 @@ PRODUCT_COPY_FILES += \
 # Hide BitSyko Layers Manager app icon from launcher
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.layers.noIcon=noIcon
+
+# SuperSU
+PRODUCT_COPY_FILES += \
+    vendor/turbo/prebuilt/common/supersu/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
+    vendor/turbo/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
+
 # CAF Chromium
 PRODUCT_COPY_FILES += \
     vendor/turbo/prebuilt/common/app/CAF-Chromium/CAF-Chromium.apk:system/app/CAF-Chromium/Chromium.apk
