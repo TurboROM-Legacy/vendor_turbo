@@ -93,6 +93,10 @@ PRODUCT_COPY_FILES += \
     vendor/turbo/prebuilt/common/supersu/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
     vendor/turbo/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
 
+# ViPER4Android
+PRODUCT_COPY_FILES += \
+    vendor/turbo/prebuilt/common/app/ViPER4Android.apk:system/app/ViPER4Android/ViPER4Android.apk
+
 # Extra Optional packages
 PRODUCT_PACKAGES += \
     LatinIME \
