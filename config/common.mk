@@ -69,7 +69,6 @@ PRODUCT_PACKAGES += \
     Launcher3 \
     CellBroadcastReceiver \
     Development \
-    SpareParts \
     su
 
 # Additional Turbo packages
@@ -78,7 +77,7 @@ PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     LockClock \
     PhaseBeam \
-    WallpaperPicker 
+    WallpaperPicker \
 
 # BitSyko Layers
 PRODUCT_COPY_FILES += \
