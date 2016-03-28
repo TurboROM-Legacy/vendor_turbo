@@ -91,6 +91,9 @@ vendor/turbo/prebuilt/common/app/AdAway/AdAway.apk:system/app/AdAway/AdAway.apk
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.layers.noIcon=noIcon
 
+PRODUCT_COPY_FILES += \
+vendor/turbo/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
+
 # SuperSU
 PRODUCT_COPY_FILES += \
     vendor/turbo/prebuilt/common/supersu/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
