@@ -42,9 +42,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/turbo/prebuilt/common/etc/init.local.rc:root/init.turbo.rc
 
-# Copy latinime for gesture typing
+# Proprietary latinime libs needed for Keyboard swyping
+ifneq ($(arm $(TARGET_PRODUCT)),)
 PRODUCT_COPY_FILES += \
-    vendor/turbo/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
+    vendor/turbo/prebuilt/common/lib/libjni_latinime.so:system/lib/libjni_latinime.so
+else ifneq ($(arm64 $(TARGET_PRODUCT)),)
+PRODUCT_COPY_FILES += \
+    vendor/turbo/prebuilt/common/lib64/libjni_latinime.so:system/lib64/libjni_latinime.so
+endif
 
 # SELinux filesystem labels
 PRODUCT_COPY_FILES += \
@@ -77,11 +82,15 @@ PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     LockClock \
     PhaseBeam \
-    WallpaperPicker \
+    WallpaperPicker 
 
 # BitSyko Layers
 PRODUCT_COPY_FILES += \
     vendor/turbo/prebuilt/common/app/LayersManager/LayersManager.apk:system/app/LayersManager/LayersManager.apk
+
+# AdAway
+PRODUCT_COPY_FILES += \
+    vendor/turbo/prebuilt/common/app/AdAway/AdAway.apk:system/app/AdAway/AdAway.apk
 
 # Hide BitSyko Layers Manager app icon from launcher
 PRODUCT_PROPERTY_OVERRIDES += \
