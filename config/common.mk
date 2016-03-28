@@ -90,9 +90,13 @@ vendor/turbo/prebuilt/common/app/AdAway/AdAway.apk:system/app/AdAway/AdAway.apk
 # Hide BitSyko Layers Manager app icon from launcher
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.layers.noIcon=noIcon
-
+# Swipe Libs
 PRODUCT_COPY_FILES += \
 vendor/turbo/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
+
+# Chromium-Browser
+PRODUCT_COPY_FILES += \
+vendor/turbo/prebuilt/common/app/CAF-Chromium/CAF-Chromium.apk:system/app/ChromiumPrebuilt/ChromiumPrebuilt.apk
 
 # SuperSU
 PRODUCT_COPY_FILES += \
