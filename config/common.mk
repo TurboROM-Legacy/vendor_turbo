@@ -96,6 +96,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.layers.noIcon=noIcon
 
+# OmniSwitch
+PRODUCT_PACKAGES += \
+    OmniSwitch 
+
 # SuperSU
 PRODUCT_COPY_FILES += \
     vendor/turbo/prebuilt/common/supersu/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
