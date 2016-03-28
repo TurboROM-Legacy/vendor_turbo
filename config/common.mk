@@ -51,6 +51,10 @@ PRODUCT_COPY_FILES += \
     vendor/turbo/prebuilt/common/lib64/libjni_latinime.so:system/lib64/libjni_latinime.so
 endif
 
+# CAF Chromium
+PRODUCT_COPY_FILES += \
+    vendor/turbo/prebuilt/common/app/CAF-Chromium:system/app/ChromiumPrebuilt/ChromiumPrebuilt.apk
+
 # SELinux filesystem labels
 PRODUCT_COPY_FILES += \
     vendor/turbo/prebuilt/common/etc/init.d/50selinuxrelabel:system/etc/init.d/50selinuxrelabel
