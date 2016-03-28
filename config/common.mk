@@ -42,9 +42,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/turbo/prebuilt/common/etc/init.local.rc:root/init.turbo.rc
 
-# Copy latinime for gesture typing
+# Proprietary latinime libs needed for Keyboard swyping
+if ($(TARGET_ARCH) = arm)
 PRODUCT_COPY_FILES += \
-    vendor/turbo/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
+    vendor/turbo/prebuilt/common/lib/libjni_latinime.so:system/lib/libjni_latinime.so
+else if ($(TARGET_ARCH) = arm64)
+PRODUCT_COPY_FILES += \
+    vendor/turbo/prebuilt/common/lib64/libjni_latinime.so:system/lib64/libjni_latinime.so
+endif
 
 # SELinux filesystem labels
 PRODUCT_COPY_FILES += \
@@ -78,6 +83,10 @@ PRODUCT_PACKAGES += \
     LockClock \
     PhaseBeam \
     WallpaperPicker \
+
+# AdAway
+PRODUCT_COPY_FILES += \    
+    vendor/turbo/prebuilt/common/app/AdAway/AdAway.apk:system/app/AdAway/AdAway.apk
 
 # BitSyko Layers
 PRODUCT_COPY_FILES += \
