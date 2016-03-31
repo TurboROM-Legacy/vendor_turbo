@@ -38,10 +38,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/turbo/prebuilt/common/bin/otasigcheck.sh:install/bin/otasigcheck.sh
 
-# LSpeed
-PRODUCT_COPY_FILES += \
-    vendor/turbo/prebuilt/common/app/LSpeed/LSpeed.apk:system/app/LSpeed/LSpeed.apk
-
 # KernelAdiutor
 PRODUCT_COPY_FILES += \
     vendor/turbo/prebuilt/common/app/KernelAdiutor/KernelAdiutor.apk:system/app/KernelAdiutor/KernelAdiutor.apk
