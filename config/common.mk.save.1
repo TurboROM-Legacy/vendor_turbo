@@ -30,6 +30,10 @@ PRODUCT_COPY_FILES += \
     vendor/turbo/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions \
     vendor/turbo/prebuilt/common/bin/50-turbo.sh:system/addon.d/50-turbo.sh
     
+
+
+
+
 # Layers Backup
 PRODUCT_COPY_FILES += \
     vendor/turbo/prebuilt/common/bin/71-layers.sh:system/addon.d/71-layers.sh
@@ -37,14 +41,6 @@ PRODUCT_COPY_FILES += \
 # Signature compatibility validation
 PRODUCT_COPY_FILES += \
     vendor/turbo/prebuilt/common/bin/otasigcheck.sh:install/bin/otasigcheck.sh
-
-# LSpeed
-PRODUCT_COPY_FILES += \
-    vendor/turbo/prebuilt/common/app/LSpeed/LSpeed.apk:system/app/LSpeed/LSpeed.apk
-
-# KernelAdiutor
-PRODUCT_COPY_FILES += \
-    vendor/turbo/prebuilt/common/app/KernelAdiutor/KernelAdiutor.apk:system/app/KernelAdiutor/KernelAdiutor.apk
 
 # Turbo-specific init file
 PRODUCT_COPY_FILES += \
@@ -223,7 +219,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.turbo.buildtype=$(TURBO_BUILD_TYPE)
 
 EXTENDED_POST_PROCESS_PROPS := vendor/turbo/tools/process_props.py
-
-
-
 

@@ -38,14 +38,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/turbo/prebuilt/common/bin/otasigcheck.sh:install/bin/otasigcheck.sh
 
-# LSpeed
-PRODUCT_COPY_FILES += \
-    vendor/turbo/prebuilt/common/app/LSpeed/LSpeed.apk:system/app/LSpeed/LSpeed.apk
-
-# KernelAdiutor
-PRODUCT_COPY_FILES += \
-    vendor/turbo/prebuilt/common/app/KernelAdiutor/KernelAdiutor.apk:system/app/KernelAdiutor/KernelAdiutor.apk
-
 # Turbo-specific init file
 PRODUCT_COPY_FILES += \
     vendor/turbo/prebuilt/common/etc/init.local.rc:root/init.turbo.rc
@@ -91,6 +83,13 @@ PRODUCT_PACKAGES += \
     LockClock \
     PhaseBeam \
     WallpaperPicker 
+
+
+
+
+
+
+
 
 # BitSyko Layers
 PRODUCT_COPY_FILES += \
@@ -221,9 +220,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.turbo.version=$(TURBO_VERSION) \
     ro.modversion=$(TURBO_MOD_VERSION) \
     ro.turbo.buildtype=$(TURBO_BUILD_TYPE)
-
-EXTENDED_POST_PROCESS_PROPS := vendor/turbo/tools/process_props.py
-
-
-
-
