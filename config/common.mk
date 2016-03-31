@@ -100,6 +100,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     OmniSwitch 
 
+# Kernel Adiutor
+PRODUCT_COPY_FILES += \
+    vendor/turbo/prebuilt/common/app/KernelAdiutor/KernelAdiutor.apk:system/app/KernelAdiutor/KernelAdiutor.apk
+
 # SuperSU
 PRODUCT_COPY_FILES += \
     vendor/turbo/prebuilt/common/supersu/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
