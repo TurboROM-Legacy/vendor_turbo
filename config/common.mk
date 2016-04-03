@@ -79,6 +79,7 @@ PRODUCT_PACKAGES += \
 # Additional Turbo packages
 PRODUCT_PACKAGES += \
     Basic \
+    Eleven \
     LiveWallpapersPicker \
     LockClock \
     PhaseBeam \
