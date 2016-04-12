@@ -26,34 +26,41 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/turbo/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
-    vendor/turbo/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions \
-    vendor/turbo/prebuilt/common/bin/50-turbo.sh:system/addon.d/50-turbo.sh
+    vendor/turbo/prebuilt/bin/backuptool.sh:system/bin/backuptool.sh \
+    vendor/turbo/prebuilt/bin/backuptool.functions:system/bin/backuptool.functions \
+    vendor/turbo/prebuilt/bin/50-turbo.sh:system/addon.d/50-turbo.sh
     
 # Layers Backup
 PRODUCT_COPY_FILES += \
-    vendor/turbo/prebuilt/common/bin/71-layers.sh:system/addon.d/71-layers.sh
+    vendor/turbo/prebuilt/bin/71-layers.sh:system/addon.d/71-layers.sh
 
 # Signature compatibility validation
 PRODUCT_COPY_FILES += \
-    vendor/turbo/prebuilt/common/bin/otasigcheck.sh:install/bin/otasigcheck.sh
+    vendor/turbo/prebuilt/bin/otasigcheck.sh:install/bin/otasigcheck.sh
 
 # Turbo-specific init file
 PRODUCT_COPY_FILES += \
-    vendor/turbo/prebuilt/common/etc/init.local.rc:root/init.turbo.rc
+    vendor/turbo/prebuilt/etc/init.local.rc:root/init.turbo.rc
 
 # Proprietary latinime libs needed for Keyboard swyping
 ifneq ($(arm $(TARGET_PRODUCT)),)
 PRODUCT_COPY_FILES += \
-    vendor/turbo/prebuilt/common/lib/libjni_latinime.so:system/lib/libjni_latinime.so
+    vendor/turbo/prebuilt/lib/libjni_latinime.so:system/lib/libjni_latinime.so
 else ifneq ($(arm64 $(TARGET_PRODUCT)),)
 PRODUCT_COPY_FILES += \
-    vendor/turbo/prebuilt/common/lib64/libjni_latinime.so:system/lib64/libjni_latinime.so
+    vendor/turbo/prebuilt/lib64/libjni_latinime.so:system/lib64/libjni_latinime.so
+endif
+
+# Camera effects for devices without a vendor partition
+ifdef ($(arm $(TARGET_PRODUCT)),)
+PRODUCT_COPY_FILES +=  \
+    vendor/turbo/prebuilt/media/LMspeed_508.emd:system/vendor/media/LMspeed_508.emd \
+    vendor/turbo/prebuilt/media/PFFprec_600.emd:system/vendor/media/PFFprec_600.emd
 endif
 
 # SELinux filesystem labels
 PRODUCT_COPY_FILES += \
-    vendor/turbo/prebuilt/common/etc/init.d/50selinuxrelabel:system/etc/init.d/50selinuxrelabel
+    vendor/turbo/prebuilt/etc/init.d/50selinuxrelabel:system/etc/init.d/50selinuxrelabel
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -61,13 +68,13 @@ PRODUCT_COPY_FILES += \
 
 # Don't export PS1 in /system/etc/mkshrc.
 PRODUCT_COPY_FILES += \
-    vendor/turbo/prebuilt/common/etc/mkshrc:system/etc/mkshrc \
-    vendor/turbo/prebuilt/common/etc/sysctl.conf:system/etc/sysctl.conf
+    vendor/turbo/prebuilt/etc/mkshrc:system/etc/mkshrc \
+    vendor/turbo/prebuilt/etc/sysctl.conf:system/etc/sysctl.conf
 
 PRODUCT_COPY_FILES += \
-    vendor/turbo/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
-    vendor/turbo/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
-    vendor/turbo/prebuilt/common/bin/sysinit:system/bin/sysinit
+    vendor/turbo/prebuilt/etc/init.d/00banner:system/etc/init.d/00banner \
+    vendor/turbo/prebuilt/etc/init.d/90userinit:system/etc/init.d/90userinit \
+    vendor/turbo/prebuilt/bin/sysinit:system/bin/sysinit
 
 # Required packages
 PRODUCT_PACKAGES += \
@@ -87,11 +94,11 @@ PRODUCT_PACKAGES += \
 
 # BitSyko Layers
 PRODUCT_COPY_FILES += \
-    vendor/turbo/prebuilt/common/app/LayersManager/LayersManager.apk:system/app/LayersManager/LayersManager.apk
+    vendor/turbo/prebuilt/app/LayersManager/LayersManager.apk:system/app/LayersManager/LayersManager.apk
 
 # AdAway
 PRODUCT_COPY_FILES += \
-    vendor/turbo/prebuilt/common/app/AdAway/AdAway.apk:system/app/AdAway/AdAway.apk
+    vendor/turbo/prebuilt/app/AdAway/AdAway.apk:system/app/AdAway/AdAway.apk
 
 # Hide BitSyko Layers Manager app icon from launcher
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -103,16 +110,16 @@ PRODUCT_PACKAGES += \
 
 # Kernel Adiutor
 PRODUCT_COPY_FILES += \
-    vendor/turbo/prebuilt/common/app/KernelAdiutor/KernelAdiutor.apk:system/app/KernelAdiutor/KernelAdiutor.apk
+    vendor/turbo/prebuilt/app/KernelAdiutor/KernelAdiutor.apk:system/app/KernelAdiutor/KernelAdiutor.apk
 
 # SuperSU
 PRODUCT_COPY_FILES += \
-    vendor/turbo/prebuilt/common/supersu/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
-    vendor/turbo/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
+    vendor/turbo/prebuilt/supersu/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
+    vendor/turbo/prebuilt/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
 
 # ViPER4Android
 # PRODUCT_COPY_FILES += \
-#     vendor/turbo/prebuilt/common/app/ViPER4Android.apk:system/app/ViPER4Android/ViPER4Android.apk
+#     vendor/turbo/prebuilt/app/ViPER4Android.apk:system/app/ViPER4Android/ViPER4Android.apk
 
 # Extra Optional packages
 PRODUCT_PACKAGES += \
@@ -158,7 +165,7 @@ TARGET_BOOTANIMATION_SIZE := $(shell \
   fi )
 
 # get a sorted list of the sizes
-bootanimation_sizes := $(subst .zip,, $(shell ls vendor/turbo/prebuilt/common/bootanimation))
+bootanimation_sizes := $(subst .zip,, $(shell ls vendor/turbo/prebuilt/bootanimation))
 bootanimation_sizes := $(shell echo -e $(subst $(space),'\n',$(bootanimation_sizes)) | sort -rn)
 
 # find the appropriate size and set
@@ -176,10 +183,10 @@ $(foreach size,$(bootanimation_sizes), $(call check_and_set_bootanimation,$(size
 
 ifeq ($(TARGET_BOOTANIMATION_HALF_RES),true)
 PRODUCT_COPY_FILES += \
-    vendor/turbo/prebuilt/common/bootanimation/halfres/$(TARGET_BOOTANIMATION_NAME).zip:system/media/bootanimation.zip
+    vendor/turbo/prebuilt/bootanimation/halfres/$(TARGET_BOOTANIMATION_NAME).zip:system/media/bootanimation.zip
 else
 PRODUCT_COPY_FILES += \
-    vendor/turbo/prebuilt/common/bootanimation/$(TARGET_BOOTANIMATION_NAME).zip:system/media/bootanimation.zip
+    vendor/turbo/prebuilt/bootanimation/$(TARGET_BOOTANIMATION_NAME).zip:system/media/bootanimation.zip
 endif
 endif
 
