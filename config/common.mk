@@ -90,7 +90,8 @@ PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     LockClock \
     PhaseBeam \
-    WallpaperPicker 
+    WallpaperPicker \
+    TurboOTA
 
 # BitSyko Layers
 PRODUCT_COPY_FILES += \
