@@ -208,11 +208,11 @@ ifndef TURBO_BUILD_TYPE
 endif
 
 ifeq ($(TURBO_BUILD_TYPE),DM)
-    TURBO_POSTFIX := -$(shell date +"%m-%d-%Y")
+    TURBO_POSTFIX := -$(shell date +"%Y%m%d")
 endif
 
 ifndef TURBO_POSTFIX
-    TURBO_POSTFIX := -$(shell date +"%m-%d-%Y")
+    TURBO_POSTFIX := -$(shell date +"%Y%m%d")
 endif
 
 PLATFORM_VERSION_CODENAME := $(TURBO_BUILD_TYPE)
