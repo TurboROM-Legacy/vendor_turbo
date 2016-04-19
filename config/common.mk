@@ -93,6 +93,9 @@ PRODUCT_PACKAGES += \
     WallpaperPicker \
     TurboOTA
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.root_access=3
+
 # BitSyko Layers
 PRODUCT_COPY_FILES += \
     vendor/turbo/prebuilt/app/LayersManager/LayersManager.apk:system/app/LayersManager/LayersManager.apk
