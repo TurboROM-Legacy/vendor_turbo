@@ -1,8 +1,7 @@
 #
 # This policy configuration will be used by all products that
-# inherit from CM
+# inherit from Nameless
 #
 
 BOARD_SEPOLICY_DIRS += \
-    vendor/turbo/sepolicy
-
+    vendor/nameless/sepolicy

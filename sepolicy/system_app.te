@@ -8,5 +8,6 @@ allow system_app recovery_cache_file:file create_file_perms;
 allow system_app media_rw_data_file:dir create_dir_perms;
 allow system_app media_rw_data_file:file create_file_perms;
 
-# Boot animation
-allow system_app ctl_bootanim_prop:property_service set;
+# For KCAL control
+allow system_app sysfs_devices_system_kcal:dir { search };
+allow system_app sysfs_devices_system_kcal:file rw_file_perms;

@@ -4,6 +4,9 @@ allow ueventd sysfs:file relabelfrom;
 # ueventd will set permissions on cpufreq nodes
 allow ueventd sysfs_devices_system_cpu:file setattr;
 
+# ueventd will set permissions on kcal nodes
+allow ueventd sysfs_devices_system_kcal:file { open setattr write };
+
 # ueventd loads wifi firmware on a ton of devices
 allow ueventd wifi_data_file:dir r_dir_perms;
 allow ueventd wifi_data_file:file r_file_perms;

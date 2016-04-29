@@ -1,2 +1,3 @@
 BOARD_SEPOLICY_DIRS += \
-    vendor/turbo/sepolicy/qcom
+    vendor/cm/sepolicy/qcom \
+    vendor/nameless/sepolicy/qcom
