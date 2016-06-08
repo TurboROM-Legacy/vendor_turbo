@@ -1,0 +1,5 @@
+# Superuser's control sockets
+/dev/socket/su-daemon(/.*)?   u:object_r:superuser_device:s0
+
+# Lock screen wallpaper
+/data/system/users/[0-9]+/keyguard_wallpaper   u:object_r:wallpaper_file:s0
