@@ -47,14 +47,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGE_OVERLAYS += vendor/turbo/overlay/common
 PRODUCT_PACKAGE_OVERLAYS += vendor/turbo/overlay/$(TARGET_PRODUCT)
 
-# World APN list
-PRODUCT_COPY_FILES += \
-    vendor/turbo/prebuilt/etc/apns-conf.xml:system/etc/apns-conf.xml
-
-# Selective SPN list for operator number who has the problem.
-PRODUCT_COPY_FILES += \
-    vendor/turbo/prebuilt/etc/selective-spn-conf.xml:system/etc/selective-spn-conf.xml
-
 # Enable SIP+VoIP
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
