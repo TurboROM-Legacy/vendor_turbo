@@ -1,0 +1,4 @@
+# Needed when natively mounting OTG NTFS devices
+allow sdcardd unlabeled:dir rw_dir_perms;
+allow sdcardd unlabeled:filesystem getattr;
+allow sdcardd unlabeled:file r_file_perms;
