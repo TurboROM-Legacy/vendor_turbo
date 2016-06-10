@@ -77,3 +77,19 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     LockClock \
     OmniSwitch
+
+# NTFS support
+PRODUCT_PACKAGES += \
+    mkfs.ntfs \
+    fsck.ntfs \
+    mount.ntfs
+
+# exFAT support
+WITH_EXFAT ?= true
+ifeq ($(WITH_EXFAT),true)
+TARGET_USES_EXFAT := true
+PRODUCT_PACKAGES += \
+    mount.exfat \
+    fsck.exfat \
+    mkfs.exfat
+endif
