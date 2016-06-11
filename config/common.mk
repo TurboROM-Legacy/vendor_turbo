@@ -12,6 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Include the versioning makefile
+include vendor/turbo/config/versioning.mk
+
 # Google property overides
 PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true \
