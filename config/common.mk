@@ -96,3 +96,13 @@ PRODUCT_PACKAGES += \
     fsck.exfat \
     mkfs.exfat
 endif
+
+# FFMPEG support
+PRODUCT_PACKAGES += \
+    libffmpeg_extractor \
+    libffmpeg_omx \
+    media_codecs_ffmpeg.xml
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    media.sf.omx-plugin=libffmpeg_omx.so \
+    media.sf.extractor-plugin=libffmpeg_extractor.so
