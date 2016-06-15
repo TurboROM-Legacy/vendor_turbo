@@ -106,3 +106,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     media.sf.omx-plugin=libffmpeg_omx.so \
     media.sf.extractor-plugin=libffmpeg_extractor.so
+
+# Additional tools
+PRODUCT_PACKAGES += \
+    bash \
+    bzip2 \
+    curl \
+    libsepol \
+    mke2fs \
+    nano \
+    strace \
+    tune2fs
