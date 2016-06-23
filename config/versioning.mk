@@ -16,5 +16,8 @@
 TURBO_PLATFORM_VERSION = 4.0
 export TURBO_VERSION := $(TURBO_PLATFORM_VERSION)-$(shell date +%Y%m%d)
 
+# Versioning for output zip files
+export TURBO_ZIP_VERSION := Turbo-$(TURBO_BUILD)-$(TURBO_PLATFORM_VERSION)-$(shell date +"%Y-%m-%d")
+
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.turbo.version=$(TURBO_VERSION)
