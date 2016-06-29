@@ -149,3 +149,7 @@ PRODUCT_PACKAGES += \
     nano \
     strace \
     tune2fs
+
+# Turbo-specific init file
+PRODUCT_COPY_FILES += \
+    vendor/turbo/prebuilt/etc/init.local.rc:root/init.turbo.rc
