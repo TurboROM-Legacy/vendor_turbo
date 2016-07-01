@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+PRODUCT_BRAND ?= turbo
+
 # Include the versioning makefile
 include vendor/turbo/config/versioning.mk
 
@@ -78,8 +80,13 @@ $(eval TARGET_BOOTANIMATION_NAME := $(shell \
 endef
 $(foreach size,$(bootanimation_sizes), $(call check_and_set_bootanimation,$(size)))
 
+ifeq ($(TARGET_BOOTANIMATION_HALF_RES),true)
+PRODUCT_COPY_FILES += \
+    vendor/turbo/prebuilt/bootanimation/halfres/$(TARGET_BOOTANIMATION_NAME).zip:system/media/bootanimation.zip
+else
 PRODUCT_COPY_FILES += \
     vendor/turbo/prebuilt/bootanimation/$(TARGET_BOOTANIMATION_NAME).zip:system/media/bootanimation.zip
+endif
 endif
 
 # Enable SIP+VoIP
