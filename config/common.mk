@@ -120,6 +120,10 @@ PRODUCT_COPY_FILES += \
     vendor/turbo/prebuilt/bin/backuptool.functions:system/bin/backuptool.functions \
     vendor/turbo/prebuilt/bin/backuptool.sh:system/bin/backuptool.sh
 
+# Backup services whitelist
+PRODUCT_COPY_FILES += \
+    vendor/turbo/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
+
 # Additional packages
 PRODUCT_PACKAGES += \
     LockClock \
