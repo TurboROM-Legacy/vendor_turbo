@@ -98,10 +98,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
 
 # Proprietary LatinIME libs needed for AOSP keyboard swyping
-ifeq ($(arm $(TARGET_PRODUCT)),)
+ifneq ($(filter arm64,$(TARGET_ARCH)),)
 PRODUCT_COPY_FILES += \
     vendor/turbo/prebuilt/lib/libjni_latinime.so:system/lib/libjni_latinime.so
-else ifeq ($(arm64 $(TARGET_PRODUCT)),)
+else
 PRODUCT_COPY_FILES += \
     vendor/turbo/prebuilt/lib64/libjni_latinime.so:system/lib64/libjni_latinime.so
 endif
