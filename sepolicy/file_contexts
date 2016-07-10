@@ -1,3 +1,6 @@
+# Dalvik cache
+/cache/dalvik-cache(/.*)? u:object_r:dalvikcache_data_file:s0
+
 # Superuser's control sockets
 /dev/socket/su-daemon(/.*)?   u:object_r:superuser_device:s0
 
