@@ -46,7 +46,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.setupwizard.gservices_delay=-1 \
     net.tethering.noprovisioning=true \
     persist.sys.dun.override=0 \
-    ro.adb.secure=0
+    ro.adb.secure=0 \
+    persist.sys.root_access=0
 
 # Include overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/turbo/overlay/common
@@ -159,7 +160,8 @@ PRODUCT_PACKAGES += \
     mke2fs \
     nano \
     strace \
-    tune2fs
+    tune2fs \
+    su
 
 # init.d support
 PRODUCT_COPY_FILES += \
