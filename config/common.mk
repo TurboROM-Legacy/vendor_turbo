@@ -108,7 +108,7 @@ PRODUCT_COPY_FILES += \
 endif
 
 # Camera effects for devices without a vendor partition
-ifdef ($(arm $(TARGET_PRODUCT)),)
+ifneq ($(filter arm64,$(TARGET_ARCH)),)
 PRODUCT_COPY_FILES +=  \
     vendor/turbo/prebuilt/media/LMspeed_508.emd:system/vendor/media/LMspeed_508.emd \
     vendor/turbo/prebuilt/media/PFFprec_600.emd:system/vendor/media/PFFprec_600.emd
