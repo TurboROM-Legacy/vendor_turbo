@@ -167,6 +167,11 @@ PRODUCT_PACKAGES += \
     tune2fs \
     su
 
+# Default notification/alarm sounds
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.notification_sound=Argon.ogg \
+    ro.config.alarm_alert=Helium.ogg
+
 # init.d support
 PRODUCT_COPY_FILES += \
     vendor/turbo/prebuilt/bin/sysinit:system/bin/sysinit
