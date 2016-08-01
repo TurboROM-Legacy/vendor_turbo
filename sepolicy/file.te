@@ -1,1 +1,4 @@
 type ntfs, sdcard_type, fs_type, mlstrustedobject;
+
+# Persistent property storage
+type persist_property_file, file_type;
