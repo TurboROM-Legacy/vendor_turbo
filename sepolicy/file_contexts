@@ -16,6 +16,9 @@
 /system/bin/mkfs\.f2fs    u:object_r:mkfs_exec:s0
 /system/bin/mkfs\.ntfs    u:object_r:mkfs_exec:s0
 
+# bash
+/system/xbin/bash                               u:object_r:shell_exec:s0
+
 # sysinit
 /system/bin/sysinit       u:object_r:sysinit_exec:s0
 
