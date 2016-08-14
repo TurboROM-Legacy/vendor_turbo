@@ -129,6 +129,13 @@ PRODUCT_PACKAGES += \
     LockClock \
     OmniSwitch
 
+# DU Utils library
+PRODUCT_PACKAGES += \
+    org.dirtyunicorns.utils
+
+PRODUCT_BOOT_JARS += \
+    org.dirtyunicorns.utils
+
 # NTFS support
 PRODUCT_PACKAGES += \
     mkfs.ntfs \
