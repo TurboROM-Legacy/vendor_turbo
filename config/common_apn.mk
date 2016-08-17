@@ -6,3 +6,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/turbo/prebuilt/etc/selective-spn-conf.xml:system/etc/selective-spn-conf.xml
 
+# SIM Toolkit
+PRODUCT_PACKAGES += \
+    Stk
