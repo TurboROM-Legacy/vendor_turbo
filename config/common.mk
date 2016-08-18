@@ -127,6 +127,7 @@ PRODUCT_COPY_FILES += \
 # Additional packages
 PRODUCT_PACKAGES += \
     LockClock \
+    Masquerade \
     OmniSwitch
 
 # DU Utils library
