@@ -187,3 +187,7 @@ PRODUCT_COPY_FILES += \
 # Turbo-specific init file
 PRODUCT_COPY_FILES += \
     vendor/turbo/prebuilt/etc/init.local.rc:root/init.turbo.rc
+
+# Enable recreateStatusBar for Substratum
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.substratum.recreate=true
