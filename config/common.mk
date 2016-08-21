@@ -187,3 +187,17 @@ PRODUCT_COPY_FILES += \
 # Turbo-specific init file
 PRODUCT_COPY_FILES += \
     vendor/turbo/prebuilt/etc/init.local.rc:root/init.turbo.rc
+
+# Substratum
+PRODUCT_COPY_FILES += \
+    vendor/turbo/prebuilt/app/Substratum/Substratum.apk:system/app/Substratum/Substratum.apk
+
+# AdAway
+PRODUCT_COPY_FILES += \
+    vendor/turbo/prebuilt/app/AdAway/AdAway.apk:system/app/AdAway/AdAway.apk
+
+# Kernel Adiutor
+PRODUCT_COPY_FILES += \
+    vendor/turbo/prebuilt/app/KernelAdiutor/KernelAdiutor.apk:system/app/KernelAdiutor/KernelAdiutor.apk
+
+
