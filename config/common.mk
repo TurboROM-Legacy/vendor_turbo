@@ -200,4 +200,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/turbo/prebuilt/app/KernelAdiutor/KernelAdiutor.apk:system/app/KernelAdiutor/KernelAdiutor.apk
 
+# Gello
+PRODUCT_COPY_FILES += \
+    vendor/turbo/prebuilt/app/Gello/Gello.apk:system/app/Gello/Gello.apk
 
