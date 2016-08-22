@@ -124,11 +124,29 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/turbo/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
 
+
+# Required packages
+ PRODUCT_PACKAGES += \
+    Launcher3 \
+    CellBroadcastReceiver \
+    Development
+
 # Additional packages
 PRODUCT_PACKAGES += \
     LockClock \
     Masquerade \
-    OmniSwitch
+    OmniSwitch \
+    Basic \
+    Eleven \
+    LiveWallpapersPicker \
+    PhaseBeam \
+    WallpaperPicker \
+    TurboOTA
+
+# Extra Optional packages
+ PRODUCT_PACKAGES += \
+    LatinIME \
+    BluetoothExt
 
 # DU Utils library
 PRODUCT_PACKAGES += \
