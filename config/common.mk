@@ -191,3 +191,7 @@ PRODUCT_COPY_FILES += \
 # Enable recreateStatusBar for Substratum
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.substratum.recreate=true
+
+# Substratum APK
+PRODUCT_COPY_FILES += \
+    vendor/turbo/prebuilt/app/Substratum/Substratum.apk:system/app/Substratum/Substratum.apk
