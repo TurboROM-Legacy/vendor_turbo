@@ -135,6 +135,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     LockClock \
     Masquerade \
+    Substratum \
     OmniSwitch \
     Basic \
     Eleven \
@@ -205,10 +206,6 @@ PRODUCT_COPY_FILES += \
 # Turbo-specific init file
 PRODUCT_COPY_FILES += \
     vendor/turbo/prebuilt/etc/init.local.rc:root/init.turbo.rc
-
-# Substratum
-PRODUCT_COPY_FILES += \
-    vendor/turbo/prebuilt/app/Substratum/Substratum.apk:system/app/Substratum/Substratum.apk
 
 # AdAway
 PRODUCT_COPY_FILES += \
