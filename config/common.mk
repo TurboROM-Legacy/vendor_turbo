@@ -124,11 +124,30 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/turbo/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
 
+
+# Required packages
+ PRODUCT_PACKAGES += \
+    Launcher3 \
+    CellBroadcastReceiver \
+    Development
+
 # Additional packages
 PRODUCT_PACKAGES += \
     LockClock \
     Masquerade \
-    OmniSwitch
+    Substratum \
+    OmniSwitch \
+    Basic \
+    Eleven \
+    LiveWallpapersPicker \
+    PhaseBeam \
+    WallpaperPicker \
+    TurboOTA
+
+# Extra Optional packages
+ PRODUCT_PACKAGES += \
+    LatinIME \
+    BluetoothExt
 
 # DU Utils library
 PRODUCT_PACKAGES += \
@@ -187,6 +206,18 @@ PRODUCT_COPY_FILES += \
 # Turbo-specific init file
 PRODUCT_COPY_FILES += \
     vendor/turbo/prebuilt/etc/init.local.rc:root/init.turbo.rc
+
+# AdAway
+PRODUCT_COPY_FILES += \
+    vendor/turbo/prebuilt/app/AdAway/AdAway.apk:system/app/AdAway/AdAway.apk
+
+# Kernel Adiutor
+PRODUCT_COPY_FILES += \
+    vendor/turbo/prebuilt/app/KernelAdiutor/KernelAdiutor.apk:system/app/KernelAdiutor/KernelAdiutor.apk
+
+# Gello
+PRODUCT_COPY_FILES += \
+    vendor/turbo/prebuilt/app/Gello/Gello.apk:system/app/Gello/Gello.apk
 
 # Enable recreateStatusBar for Substratum
 PRODUCT_PROPERTY_OVERRIDES += \
