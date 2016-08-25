@@ -38,6 +38,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/turbo/prebuilt/bin/otasigcheck.sh:install/bin/otasigcheck.sh
 
+# KernelAdiutor
+PRODUCT_COPY_FILES += \
+    vendor/turbo/prebuilt/common/app/KernelAdiutor/KernelAdiutor.apk:system/app/KernelAdiutor/KernelAdiutor.apk
+
 # Turbo-specific init file
 PRODUCT_COPY_FILES += \
     vendor/turbo/prebuilt/etc/init.local.rc:root/init.turbo.rc
@@ -229,4 +233,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.turbo.buildtype=$(TURBO_BUILD_TYPE)
 
 EXTENDED_POST_PROCESS_PROPS := vendor/turbo/tools/process_props.py
+
+
+
 
