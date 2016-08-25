@@ -219,3 +219,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/turbo/prebuilt/app/Gello/Gello.apk:system/app/Gello/Gello.apk
 
+# Enable recreateStatusBar for Substratum
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.substratum.recreate=true
+
+# Substratum APK
+PRODUCT_COPY_FILES += \
+    vendor/turbo/prebuilt/app/Substratum/Substratum.apk:system/app/Substratum/Substratum.apk
