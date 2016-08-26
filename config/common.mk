@@ -192,6 +192,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.substratum.recreate=true
 
+# AdAway APK
+PRODUCT_COPY_FILES += \
+    vendor/turbo/prebuilt/app/AdAway/AdAway.apk:system/app/AdAway/AdAway.apk
+
 # Kernel Adiutor APK
 PRODUCT_COPY_FILES += \
     vendor/turbo/prebuilt/app/KernelAdiutor/KernelAdiutor.apk:system/app/KernelAdiutor/KernelAdiutor.apk
