@@ -192,6 +192,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.substratum.recreate=true
 
+# Kernel Adiutor APK
+PRODUCT_COPY_FILES += \
+    vendor/turbo/prebuilt/app/KernelAdiutor/KernelAdiutor.apk:system/app/KernelAdiutor/KernelAdiutor.apk
+
 # Substratum APK
 PRODUCT_COPY_FILES += \
     vendor/turbo/prebuilt/app/Substratum/Substratum.apk:system/app/Substratum/Substratum.apk
