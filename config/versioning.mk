@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # Turbo ROM versioning
-TURBO_PLATFORM_VERSION = 5.0-PREVIEW
+TURBO_PLATFORM_VERSION = 5.0
 export TURBO_VERSION := $(TURBO_PLATFORM_VERSION)-$(shell date +%Y%m%d)
 
 # Versioning for output zip files
